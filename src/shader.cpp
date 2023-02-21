@@ -20,7 +20,7 @@ static void checkShaderLinkStatus(unsigned int program) {
     int success;
     char infoLog[512];
 
-    glGetShaderiv(program, GL_LINK_STATUS, &success);
+    glGetProgramiv(program, GL_LINK_STATUS, &success);
     if (!success) {
         glGetShaderInfoLog(program, 512, nullptr, infoLog);
         std::cerr << "ERROR::SHADER::LINK_FAILED\n" << infoLog << std::endl;
